@@ -7,6 +7,8 @@ import signal
 
 continue_reading = True
 
+daftar_siswa = {'budi': [166, 38, 118, 165, 83], 'ani': [96, 24, 211, 28, 183]}
+
 # Capture SIGINT for cleanup when the script is aborted
 def end_read(signal,frame):
     global continue_reading
@@ -42,7 +44,9 @@ while continue_reading:
 
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
-        print uid
+
+        for k,v in daftar_siswa.iteritems():
+            print k, v
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
