@@ -37,9 +37,6 @@ while continue_reading:
 
     # Get the UID of the card
     (status,uid) = MIFAREReader.MFRC522_Anticoll()
-    for k,v in dir_sis.iteritems():
-        if uid == v:
-            print k + " sudah absen"
 
     # If we have the UID, continue
     if status == MIFAREReader.MI_OK:
@@ -49,7 +46,6 @@ while continue_reading:
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
-
 
         # Select the scanned tag
         MIFAREReader.MFRC522_SelectTag(uid)
