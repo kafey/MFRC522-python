@@ -45,8 +45,7 @@ for k, v in dir_sis.iteritems():
     # If we have the UID, continue
         if status == MIFAREReader.MI_OK:
 
-            if v == uid:
-                print k
+            print k
 
         # Print UID
             print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
