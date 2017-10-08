@@ -5,7 +5,6 @@ import RPi.GPIO as GPIO
 import MFRC522
 import signal
 
-dir_sis = {"budi": [96,24,211,28], "rudi": [166,38,118,165]}
 continue_reading = True
 
 # Capture SIGINT for cleanup when the script is aborted
