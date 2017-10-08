@@ -47,7 +47,7 @@ while continue_reading:
 
         for k,v in daftar_siswa.iteritems():
             if uid == v:
-                print k
+                print k + "sudah absen"
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
