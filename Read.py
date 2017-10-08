@@ -46,7 +46,8 @@ while continue_reading:
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
 
         for k,v in daftar_siswa.iteritems():
-            print k, v
+            if uid = v:
+                print k
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
