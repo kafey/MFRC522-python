@@ -45,11 +45,12 @@ for k, v in dir_sis.iteritems():
     # If we have the UID, continue
         if status == MIFAREReader.MI_OK:
 
+            print v
+
         # Print UID
             print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
 
-            if uid == v:
-            print k + " sudah absen"
+
 
 
 
