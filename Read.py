@@ -7,6 +7,10 @@ import signal
 
 continue_reading = True
 
+dir_siswa = {"budi":[166,38,118,165], "rudi": [96,24,211,28]}
+
+for k,v in dir_siswa.iteritems():
+    print k, v
 # Capture SIGINT for cleanup when the script is aborted
 def end_read(signal,frame):
     global continue_reading
@@ -26,14 +30,14 @@ print "Press Ctrl-C to stop."
 
 # This loop keeps checking for chips. If one is near it will get the UID and authenticate
 while continue_reading:
-    
-    # Scan for cards    
+
+    # Scan for cards
     (status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
 
     # If a card is found
     if status == MIFAREReader.MI_OK:
         print "Card detected"
-    
+
     # Get the UID of the card
     (status,uid) = MIFAREReader.MFRC522_Anticoll()
 
@@ -42,10 +46,10 @@ while continue_reading:
 
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
-    
+
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
-        
+
         # Select the scanned tag
         MIFAREReader.MFRC522_SelectTag(uid)
 
