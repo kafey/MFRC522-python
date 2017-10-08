@@ -38,12 +38,14 @@ for k, v in dir_sis.iteritems():
     
     # Get the UID of the card
         (status,uid) = MIFAREReader.MFRC522_Anticoll()
+        
+        if uid == v:
+                print k + " sudah absen"
+
 
     # If we have the UID, continue
         if status == MIFAREReader.MI_OK:
-            if uid == v:
-                print k + " sudah absen"
-
+            
         # Print UID
             print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
         
