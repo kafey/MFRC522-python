@@ -9,8 +9,7 @@ continue_reading = True
 
 dir_siswa = {"budi":[166,38,118,165], "rudi": [96,24,211,28]}
 
-for k,v in dir_siswa.iteritems():
-    print k, v
+
 # Capture SIGINT for cleanup when the script is aborted
 def end_read(signal,frame):
     global continue_reading
@@ -40,6 +39,8 @@ while continue_reading:
 
     # Get the UID of the card
     (status,uid) = MIFAREReader.MFRC522_Anticoll()
+    for k,v in dir_siswa.iteritems():
+        print k, v
 
     # If we have the UID, continue
     if status == MIFAREReader.MI_OK:
