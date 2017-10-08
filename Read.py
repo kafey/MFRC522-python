@@ -25,7 +25,7 @@ MIFAREReader = MFRC522.MFRC522()
 print "Welcome to the MFRC522 data read example"
 print "Press Ctrl-C to stop."
 
-for k, v in dir_sis.iteritem():
+for k, v in dir_sis.iteritems():
 # This loop keeps checking for chips. If one is near it will get the UID and authenticate
     while continue_reading:
     
