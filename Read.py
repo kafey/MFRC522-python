@@ -40,7 +40,8 @@ while continue_reading:
     # Get the UID of the card
     (status,uid) = MIFAREReader.MFRC522_Anticoll()
     for k,v in dir_siswa.iteritems():
-        print k, v
+        if uid == v:
+            print k
 
     # If we have the UID, continue
     if status == MIFAREReader.MI_OK:
