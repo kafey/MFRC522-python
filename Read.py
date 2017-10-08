@@ -40,7 +40,7 @@ for k, v in dir_sis.iteritems():
         (status,uid) = MIFAREReader.MFRC522_Anticoll()
         
         if uid == v:
-                print k + " sudah absen"
+            print k + " sudah absen"
 
 
     # If we have the UID, continue
