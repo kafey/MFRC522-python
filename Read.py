@@ -46,6 +46,8 @@ while continue_reading:
 
         if uid in dir_siswa.viewvalues():
             print dir_siswa.keys()[dir_siswa.values().index(uid)]
+        else:
+            print "naon"
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
