@@ -39,15 +39,17 @@ while continue_reading:
 
     # Get the UID of the card
     (status,uid) = MIFAREReader.MFRC522_Anticoll()
-    for k,v in dir_siswa.iteritems():
-        if uid == v:
-            print k
+
 
     # If we have the UID, continue
     if status == MIFAREReader.MI_OK:
 
+        if uid in dir_siswa.viewvalues():
+            print dir_siswa.keys()[dir_siswa.values().index(uid)]
+
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
+
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
