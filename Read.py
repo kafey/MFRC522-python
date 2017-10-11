@@ -43,6 +43,7 @@ while continue_reading:
 
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
+        print uid
 
         for element in siswa:
             if uid == element["id"]:
