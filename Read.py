@@ -6,7 +6,7 @@ import MFRC522
 import signal
 
 continue_reading = True
-dir_siswa = {"budi":[166,38,118,165], "rudi": [96,24,211,28]}
+siswa = ({"name": "budi", "id": [96,24,211,28]}, {"name": "ani", "id": [166,38,118,165]})
 
 # Capture SIGINT for cleanup when the script is aborted
 def end_read(signal,frame):
@@ -44,11 +44,9 @@ while continue_reading:
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
 
-        if uid in dir_siswa.viewvalues():
-            print dir_siswa.keys()[dir_siswa.values().index(uid)]
-        else:
-            print "naon"
-
+        for element in siswa:
+            if uid == element["id"]:
+                print element["name"]
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
 
