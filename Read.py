@@ -47,6 +47,8 @@ while continue_reading:
         for element in siswa:
             if uid == element["id"]:
                 print element["name"]
+            else:
+                print "naon"
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
 
