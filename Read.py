@@ -6,7 +6,7 @@ import MFRC522
 import signal
 
 continue_reading = True
-siswa = ({"name": "budi", "id": [96,24,211,28]}, {"name": "ani", "id": [166,38,118,165]})
+siswa = ({"name": "budi", "id": [96, 24, 211, 28, 183]}, {"name": "ani", "id": [166, 38, 118, 165, 83]})
 
 # Capture SIGINT for cleanup when the script is aborted
 def end_read(signal,frame):
@@ -46,10 +46,10 @@ while continue_reading:
         print uid
 
         for element in siswa:
-            print element["id"]
-            #    print element["name"]
-            #else:
-            #    print "naon"
+            if uid == element["id"]:
+                print element["name"]
+            else:
+                print "naon"
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
 
