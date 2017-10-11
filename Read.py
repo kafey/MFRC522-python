@@ -46,7 +46,7 @@ while continue_reading:
         print uid
 
         for element in siswa:
-            print element["id"]:
+            print element["id"]
             #    print element["name"]
             #else:
             #    print "naon"
